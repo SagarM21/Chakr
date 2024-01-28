@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import { SearchIcon } from "../assets/icons";
+import { ChevronDownIcon, SearchIcon } from "../assets/icons";
 import {
   LayoutDashboard,
   UsersRound,
@@ -69,10 +69,26 @@ function NavItem({ to, icon, label, setMobileMenuOpen }) {
         to={to}
         className="group flex items-center transition-all py-2 px-4 gap-3 rounded hover:bg-navbar-100"
       >
-        {icon}
-        <span className="text-sm font-medium opacity-80 group-hover:opacity-100 transition-all">
-          {label}
-        </span>
+        {label === "Customers" ? (
+          <>
+            <div className="flex items-center">
+              <div className="flex items-center gap-3 mr-10">
+                {icon}
+                <span className="text-sm font-medium opacity-80 group-hover:opacity-100 transition-all">
+                  {label}
+                </span>
+              </div>
+              <ChevronDownIcon />
+            </div>
+          </>
+        ) : (
+          <>
+            {icon}
+            <span className="text-sm font-medium opacity-80 group-hover:opacity-100 transition-all">
+              {label}
+            </span>
+          </>
+        )}
       </NavLink>
     </li>
   );
