@@ -28,6 +28,7 @@ export default {
         darkOrange: "rgba(115, 74, 0, 1)",
         lightOrange: "rgba(255, 165, 0, 1)",
         lightestOrange: "rgba(255, 247, 232, 1)",
+        midOrange: "rgba(255, 205, 113, 1)",
       },
       gray: {
         darkGray: "rgba(69, 69, 69, 1)",

@@ -29,3 +29,8 @@
     @apply opacity-100 text-orange-lightOrange;
   }
 }
+
+.semicircle-percent-value {
+  font-weight: 700;
+  font-size: 32px;
+}

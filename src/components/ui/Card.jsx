@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { ArrowUpRight, MoveRight } from "lucide-react";
 import ProgressBar from "../../assets/Card/ProgressBar.svg";
+import SemiCircleProgressBar from "react-progressbar-semicircle";
 
 export default function Card({ title, percentage, description, report }) {
   return (
@@ -44,7 +45,14 @@ export default function Card({ title, percentage, description, report }) {
           </div>
           <div className="flex">
             {/* PROGRESS BAR */}
-            <img src={ProgressBar} alt="" className="w-[150px] h-[110px]" />
+            {/* <img src={ProgressBar} alt="" className="w-[150px] h-[110px]" /> */}
+            <SemiCircleProgressBar
+              percentage={84}
+              showPercentValue
+              stroke="rgba(255, 205, 113, 1)"
+              background="rgba(255, 247, 232, 1)"
+              diameter="220"
+            />
           </div>
           <div className="flex items-center gap-1 text-orange-primary rounded-lg py-2 pb-4 px-6 cursor-pointer">
             <span className="text-sm">{report}</span>
