@@ -2,15 +2,30 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@layer base {
+  body {
+    @apply bg-black-98 font-inter text-black-12;
+  }
 }
 
-body {
-  min-width: 320px;
-  min-height: 100vh;
+@layer utilities {
+  .main-nav__link a.active {
+    @apply bg-navbar-100;
+  }
+
+  .main-nav__link a.active span {
+    @apply opacity-100;
+  }
+
+  .main-nav__link svg {
+    @apply w-4 h-4 opacity-80 transition-all;
+  }
+
+  .main-nav__link a:hover svg {
+    @apply opacity-100;
+  }
+
+  .main-nav__link a.active svg {
+    @apply opacity-100 text-orange-lightOrange;
+  }
 }
