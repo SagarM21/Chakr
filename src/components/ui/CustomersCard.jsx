@@ -3,6 +3,7 @@ import CustomerAvatar1 from "../../assets/Customer/CustomerAvatar-1.svg";
 import CustomerAvatar2 from "../../assets/Customer/CustomerAvatar-2.svg";
 import CustomerAvatar3 from "../../assets/Customer/CustomerAvatar-3.svg";
 import CustomerAvatar4 from "../../assets/Customer/CustomerAvatar-4.svg";
+// import dataset from "../../data/dataset.csv";
 import {
   MoveRight,
   MessageCircle,
@@ -12,6 +13,7 @@ import {
   MoreVertical,
 } from "lucide-react";
 import TopCard from "./TopCard";
+import GraphComponent from "./GraphComponent";
 
 export default function CustomersCard({ title, sort }) {
   const customersData = [
@@ -49,13 +51,13 @@ export default function CustomersCard({ title, sort }) {
           </div>
         </div>
 
-        <div className="flex flex-col gap-1">
+        <div className="flex flex-col desktop:gap-3 tablet:gap-6">
           {title === "Customers" &&
             customersData.map((c) => (
               <div
                 className={`${
                   c.name === "Maggie Johnson"
-                    ? "bg-orange-secondary p-2 rounded-[16px] flex gap-3 justify-between items-center"
+                    ? "bg-orange-secondary p-2 rounded-[16px] flex gap-4 justify-between items-center"
                     : "p-2 flex gap-3"
                 } `}
                 key={c.company}
@@ -78,35 +80,38 @@ export default function CustomersCard({ title, sort }) {
                     </div>
                   </>
                 ) : (
-                  <>
+                  <div className="flex gap-3">
                     <img src={c.image} alt="" />
                     <div className="flex flex-col text-sm ">
                       <span className="text-black font-medium">{c.name}</span>
                       <span className="opacity-80">{c.company}</span>
                     </div>
-                  </>
+                  </div>
                 )}
               </div>
             ))}
         </div>
       </div>
 
-      <div className="flex items-center gap-1 text-orange-primary rounded-lg pb-4 px-6 cursor-pointer">
+      <div className="flex items-center gap-1 text-orange-primary rounded-lg px-6 pb-4 cursor-pointer">
         <span className="text-sm">All customers</span>
         <MoveRight size={15} className="text-orange-primary" />
       </div>
     </div>
   ) : (
     <div className="flex flex-col">
-      <div className="flex flex-col bg-black-100 shadow-sm overflow-hidden gap-6 rounded-[16px] h-3/5">
-        <div className="p-5 flex flex-col gap-5 text-black">
-          <div className="flex items-center justify-between gap-2 font-bold px-2">
+      <div className="flex flex-col bg-black-100 shadow-sm overflow-hidden gap-1 rounded-[16px]">
+        <div className="p-5 flex flex-col  text-black">
+          <div className="flex items-center justify-between font-bold px-2">
             <span>{title}</span>
             <div className="flex gap-1 items-center font-medium text-sm opacity-70 cursor-pointer">
               <span>{sort}</span>
               <ChevronDownIcon width={15} height={15} />
             </div>
           </div>
+        </div>
+        <div className="flex text-gray-darkGray pb-6">
+          <GraphComponent />
         </div>
       </div>
 
