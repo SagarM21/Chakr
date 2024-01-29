@@ -101,18 +101,12 @@ const GraphComponent = () => {
       <XAxis dataKey="Timestamp" tickMargin={15} />
       <YAxis tickMargin={15} />
       <CartesianGrid stroke="#eee" strokeWidth={1} />
-      <Line
-        type="monotone"
-        dataKey="Profit Percentage"
-        stroke="#25CD25"
-        strokeDasharray="3 3"
-        // dot={{ strokeWidth: 2, r: 3 }}
-        activeDot={{ r: 8 }}
-      />
       <Area
         type="monotone"
         dataKey="Profit Percentage"
         fill="url(#areaGradient)"
+        strokeDasharray="3 3"
+        stroke="#25CD25"
         fillOpacity={0.7}
       />
       <Tooltip />
