@@ -52,6 +52,7 @@ export default function Card({ title, percentage, description, report }) {
               stroke="rgba(255, 205, 113, 1)"
               background="rgba(255, 247, 232, 1)"
               diameter="220"
+              strokeWidth={12}
             />
           </div>
           <div className="flex items-center gap-1 text-orange-primary rounded-lg py-2 pb-4 px-6 cursor-pointer">
